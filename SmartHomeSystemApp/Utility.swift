@@ -1,5 +1,5 @@
 //
-//  Lighting.swift
+//  Utility.swift
 //  SmartHomeSystemApp
 //
 //  Created by Culloden, Xan (EJNR) on 28/11/2023.
@@ -7,27 +7,17 @@
 
 import Foundation
 
-class Lighting:Device{
+class Utility:Device{
     var name: String
     var state: Bool
     var location: String
-    var brightness: Float
-    var hue: String
+    var function: String
     
-    func changeHue(_ hex: String){
-        hue = hex
-    }
-    
-    func incrimentBrightness(_ change: Float){
-        brightness += change
-    }
-    
-    init(name: String, location: String) {
+    init(name: String, location: String, function: String) {
         self.name = name
         self.state = false
         self.location = location
-        self.brightness = 100.0
-        self.hue = "FFFFFF"
+        self.function = function
     }
     
     func powerSwitch() {
@@ -37,6 +27,7 @@ class Lighting:Device{
         else if state == true {
             state = false
         }
+        
         
         
     }
